@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>COVA Coalition — Visual Direction</title>
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+  body{
+    background:#F4EFE6;
+    color:#131313;
+    font-family:'Inter',sans-serif;
+    padding:0 0 6rem;
+  }
+  .wrap{max-width:1040px;margin:0 auto;padding:0 1.5rem;}
+
+  header{padding:3.5rem 0 2.5rem;border-bottom:2px solid #131313;}
+
+  .moodboard-banner{
+    border-radius:4px;overflow:hidden;margin-bottom:2.5rem;
+    aspect-ratio:2000/600;width:100%;
+  }
+  .moodboard-banner img{
+    width:100%;height:100%;object-fit:cover;display:block;
+  }
+  .eyebrow{font-weight:700;font-size:11px;letter-spacing:.16em;text-transform:uppercase;opacity:.55;margin-bottom:14px;}
+  h1{
+    font-family:'Jost',sans-serif;font-weight:600;
+    font-size:clamp(2.4rem,6.5vw,4rem);line-height:.98;letter-spacing:.3px;text-transform:uppercase;
+  }
+  .dek{max-width:620px;font-size:15px;line-height:1.65;color:#131313cc;margin-top:1.25rem;}
+
+  .section{padding-top:3.5rem;}
+  .section-label{font-weight:700;font-size:11px;letter-spacing:.16em;text-transform:uppercase;opacity:.55;margin-bottom:1rem;}
+  .section-note{font-size:14px;line-height:1.65;color:#131313cc;max-width:640px;margin-bottom:2rem;}
+
+  .palette-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+  @media (max-width:640px){ .palette-grid{grid-template-columns:1fr;} }
+
+  .swatch{
+    border-radius:4px;padding:2.2rem 1.6rem 1.6rem;position:relative;overflow:hidden;
+    min-height:210px;display:flex;flex-direction:column;justify-content:space-between;
+  }
+  .swatch-name{font-weight:700;font-size:11px;letter-spacing:.14em;text-transform:uppercase;opacity:.85;}
+  .swatch-role{font-size:11.5px;opacity:.7;margin-top:2px;}
+  .swatch-word{
+    font-family:'Jost',sans-serif;font-weight:600;font-size:clamp(1.7rem,4.2vw,2.3rem);
+    line-height:1.02;text-transform:uppercase;margin-top:.9rem;
+  }
+  .hexrow{display:flex;gap:8px;margin-top:1.2rem;font-size:10.5px;letter-spacing:.04em;opacity:.9;}
+  .hexchip{padding:3px 8px;border-radius:999px;border:1px solid currentColor;}
+  .source-tag{
+    font-size:9.5px;letter-spacing:.08em;text-transform:uppercase;opacity:.85;
+    margin-top:.5rem;font-weight:700;
+  }
+  .anchor-tag{color:inherit;}
+
+  /* anchors — kept exactly as extracted */
+  .s1{background:#C48FEE;color:#131313;}
+  .s1 .swatch-word{color:#131313;}
+
+  .s2{background:#3676B9;color:#FFFFFF;}
+  .s2 .swatch-word{color:#FFFFFF;}
+
+  /* new bold additions */
+  .s3{background:#D6127A;color:#FFFFFF;}
+  .s3 .swatch-word{color:#FFFFFF;}
+
+  .s4{background:#FFB627;color:#131313;}
+  .s4 .swatch-word{color:#131313;}
+
+  .s5{background:#00D4C4;color:#131313;}
+  .s5 .swatch-word{color:#131313;}
+
+  .s6{background:#131313;color:#F4EFE6;}
+  .s6 .swatch-word{color:#F4EFE6;}
+
+  .s7{background:#F4EFE6;color:#131313;border:2px solid #131313;}
+  .type-card{background:#fff;border:1px solid #13131322;border-radius:4px;padding:1.8rem;}
+  .item{font-size:13px;color:#131313aa;padding:9px 0;border-bottom:0.5px solid #13131314;line-height:1.6;}
+  .item:last-child{border-bottom:none;}
+  .item strong{color:#131313;font-weight:600;}
+
+  .rotation-card{margin-top:2rem;background:#131313;color:#F4EFE6;border-radius:4px;padding:1.6rem 1.8rem;font-size:13.5px;line-height:1.7;}
+  .rotation-card b{color:#C48FEE;}
+
+  .tag-grid{display:flex;flex-direction:column;gap:10px;}
+  .tag-row{display:flex;align-items:center;gap:14px;background:#fff;border:1px solid #13131318;border-radius:4px;padding:.9rem 1.2rem;}
+  .tag-pill{
+    font-family:'Inter',sans-serif;font-weight:700;font-size:11px;letter-spacing:.05em;
+    padding:6px 14px;border-radius:4px;white-space:nowrap;flex-shrink:0;text-transform:uppercase;
+  }
+  .tag-desc{font-size:12.5px;color:#131313bb;line-height:1.5;}
+
+  .tag-cova{background:#3676B9;color:#FFFFFF;}
+  .tag-keyrace{background:#C48FEE;color:#131313;}
+  .tag-nonkeyrace{background:#fff;color:#3676B9;border:1.5px solid #3676B9;}
+  .tag-keyissue{background:#00D4C4;color:#131313;}
+  .tag-electiondate{background:#FFB627;color:#131313;}
+  .tag-schoolboard{background:#F0E0FF;color:#131313;}
+  .tag-partner{background:#fff;color:#131313;border:1.5px solid #131313;}
+  .tag-rapid{background:#131313;color:#D6127A;border:1.5px solid #D6127A;}
+
+  .asset-note{
+    background:#fff;border:1px solid #13131322;border-radius:4px;padding:1.6rem 1.8rem;
+    font-size:13.5px;line-height:1.7;color:#131313cc;margin-bottom:1.5rem;
+  }
+  .asset-note b{color:#131313;}
+
+  footer{margin-top:4rem;padding-top:1.5rem;border-top:1px solid #13131322;font-size:11px;letter-spacing:.06em;opacity:.5;text-transform:uppercase;}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <div class="moodboard-banner">
+      <img src="img/COVA%20-%20visual%20research.png" alt="Collage of COVA Coalition's existing visual assets — logo, banner, and social graphics">
+    </div>
+    <div class="eyebrow">Visual Direction · Draft v3 — Anchored &amp; Bold</div>
+    <h1>COVA Coalition</h1>
+    <p class="dek">Lavender Purple and Mermaid Blue stay exactly as they exist today — the two threads tying this system back to the logo and banner already in the world. Everything else leans into the bold, saturated, dynamic energy of the broader design system, rather than the softer, more corporate direction from the previous draft.</p>
+  </header>
+
+  <section class="section">
+    <div class="section-label">01 — The Palette</div>
+    <p class="section-note">Two anchors, kept exactly as extracted from the existing logo and banner. Four bold new additions build out the energy — kept flat and simple, so the color itself does the work rather than any added effect.</p>
+
+    <div class="palette-grid">
+      <div class="swatch s2">
+        <div>
+          <div class="swatch-name">Mermaid Blue</div>
+          <div class="swatch-role">Anchor — from the logo mark</div>
+        </div>
+        <div class="swatch-word">COVA</div>
+        <div>
+          <div class="hexrow"><span class="hexchip">#3676B9</span></div>
+          <div class="source-tag">Anchor — kept exactly</div>
+        </div>
+      </div>
+      <div class="swatch s1">
+        <div>
+          <div class="swatch-name">Lavender Purple</div>
+          <div class="swatch-role">Anchor — accent color</div>
+        </div>
+        <div class="swatch-word">COVA</div>
+        <div>
+          <div class="hexrow"><span class="hexchip">#C48FEE</span></div>
+          <div class="source-tag">Anchor — kept exactly</div>
+        </div>
+      </div>
+      <div class="swatch s3">
+        <div>
+          <div class="swatch-name">Hot Magenta</div>
+          <div class="swatch-role">Bold progressive statement color</div>
+        </div>
+        <div class="swatch-word">COVA</div>
+        <div>
+          <div class="hexrow"><span class="hexchip">#D6127A</span></div>
+          <div class="source-tag">New — bold addition</div>
+        </div>
+      </div>
+      <div class="swatch s4">
+        <div>
+          <div class="swatch-name">Vivid Amber</div>
+          <div class="swatch-role">Alert / urgency (replaces red)</div>
+        </div>
+        <div class="swatch-word">COVA</div>
+        <div>
+          <div class="hexrow"><span class="hexchip">#FFB627</span></div>
+          <div class="source-tag">New — bold addition</div>
+        </div>
+      </div>
+      <div class="swatch s5">
+        <div>
+          <div class="swatch-name">Electric Teal</div>
+          <div class="swatch-role">Coastal energy, distinct from Mermaid Blue</div>
+        </div>
+        <div class="swatch-word">COVA</div>
+        <div>
+          <div class="hexrow"><span class="hexchip">#00D4C4</span></div>
+          <div class="source-tag">New — bold addition</div>
+        </div>
+      </div>
+      <div class="swatch s6">
+        <div>
+          <div class="swatch-name">Ink Black</div>
+          <div class="swatch-role">Text — the wordmark color</div>
+        </div>
+        <div class="swatch-word">COVA</div>
+        <div>
+          <div class="hexrow"><span class="hexchip">#131313</span></div>
+          <div class="source-tag">Anchor — kept exactly</div>
+        </div>
+      </div>
+      <div class="swatch s7" style="grid-column:1 / -1;">
+        <div>
+          <div class="swatch-name">Warm Sand</div>
+          <div class="swatch-role">Neutral background — the color behind every card on this page</div>
+        </div>
+        <div class="swatch-word">COVA</div>
+        <div>
+          <div class="hexrow"><span class="hexchip">#F4EFE6</span></div>
+          <div class="source-tag">New — functional addition</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-label">02 — Color-Coding System</div>
+    <p class="section-note">Applied to the eight categories already in use on the events calendar. The two anchor colors carry COVA's own identity (its events, its top races); the new bold colors give the rest of the system genuine range and energy.</p>
+
+    <div class="tag-grid">
+      <div class="tag-row">
+        <span class="tag-pill tag-cova">COVA Events</span>
+        <span class="tag-desc">Events run directly by COVA Coalition — the anchor mermaid blue</span>
+      </div>
+      <div class="tag-row">
+        <span class="tag-pill tag-keyrace">Key Race Event</span>
+        <span class="tag-desc">Tied to a high-priority race this cycle — the anchor lavender accent</span>
+      </div>
+      <div class="tag-row">
+        <span class="tag-pill tag-nonkeyrace">Events</span>
+        <span class="tag-desc">Race-related, lower priority — outline treatment keeps it visually quieter</span>
+      </div>
+      <div class="tag-row">
+        <span class="tag-pill tag-keyissue">Key Issue Event</span>
+        <span class="tag-desc">Organized around a specific policy issue, not a candidate</span>
+      </div>
+      <div class="tag-row">
+        <span class="tag-pill tag-electiondate">Key Election Dates</span>
+        <span class="tag-desc">Voting deadlines, registration cutoffs, Election Day itself</span>
+      </div>
+      <div class="tag-row">
+        <span class="tag-pill tag-schoolboard">Candidates</span>
+        <span class="tag-desc">A lighter tint of the lavender family — candidate-focused events not already covered by Key Race</span>
+      </div>
+      <div class="tag-row">
+        <span class="tag-pill tag-partner">Partner Organization</span>
+        <span class="tag-desc">Hosted by a coalition partner rather than COVA directly</span>
+      </div>
+      <div class="tag-row">
+        <span class="tag-pill tag-rapid">Rapid Response Events</span>
+        <span class="tag-desc">Highest urgency — dark ground with hot magenta reads as "alert" without red</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-label">03 — Accessibility Standards</div>
+    <p class="section-note">Every pairing checked against WCAG 2.1 — bold doesn't mean the accessibility discipline slips.</p>
+
+    <div class="type-card" style="margin-bottom:14px;">
+      <div class="swatch-name" style="margin-bottom:.9rem;">Contrast ratios (WCAG 2.1)</div>
+      <div class="item"><strong>Mermaid Blue / White</strong> (COVA Events tag) — 4.72:1 — passes AA</div>
+      <div class="item"><strong>Lavender / Ink Black</strong> (Key Race tag) — 7.53:1 — passes AAA</div>
+      <div class="item"><strong>Electric Teal / Ink Black</strong> (Key Issue tag) — 9.92:1 — passes AAA</div>
+      <div class="item"><strong>Vivid Amber / Ink Black</strong> (Election Dates tag) — 10.59:1 — passes AAA</div>
+      <div class="item"><strong>Light Lavender Tint / Ink Black</strong> (School Board tag) — 14.63:1 — passes AAA</div>
+      <div class="item" style="border:none;"><strong>Ink Black / Hot Magenta</strong> (Rapid Response tag) — 4.17:1 — passes AA for large/bold tag text; the one pairing in this system worth using only at larger sizes, not small body copy</div>
+    </div>
+
+    <div class="rotation-card">
+      <b>Accessibility / print-safe version —</b> flat Ink Black on white or Warm Sand, no color dependency, for any asset that needs to survive a black-and-white printer or a low-vision reading context. Same principle as before: bold color for everyday use, a flat high-contrast version always available alongside it.
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-label">04 — Typography</div>
+    <p class="section-note">Font Ninja identified Poppins on the live site — but comparing letterforms directly against the actual logo (the sharp apex on the "A," the open aperture on the "C") pointed to Jost SemiBold as the closer visual match for headline use. Inter stays as confirmed — it's already doing quiet duty on nav and blog body text — and becomes the consistent body copy everywhere, replacing Arial.</p>
+
+    <div class="palette-grid" style="margin-bottom:14px;">
+      <div class="type-card">
+        <div style="font-family:'Jost',sans-serif;font-weight:600;font-size:2.3rem;color:#131313;line-height:1;margin-bottom:.6rem;">Jost</div>
+        <div class="item" style="border:none;padding:0 0 .8rem;">SemiBold (600) — titles, subheads, headline moments</div>
+        <a href="https://fonts.google.com/specimen/Jost" style="font-family:'Inter',sans-serif;font-weight:600;font-size:12.5px;color:#3676B9;text-decoration:none;">fonts.google.com/specimen/Jost →</a>
+      </div>
+      <div class="type-card">
+        <div style="font-family:'Inter',sans-serif;font-weight:600;font-size:2.3rem;color:#131313;line-height:1;margin-bottom:.6rem;">Inter</div>
+        <div class="item" style="border:none;padding:0 0 .8rem;">Regular (400) / Medium (500) — body copy, UI, meta text</div>
+        <a href="https://fonts.google.com/specimen/Inter" style="font-family:'Inter',sans-serif;font-weight:600;font-size:12.5px;color:#3676B9;text-decoration:none;">fonts.google.com/specimen/Inter →</a>
+      </div>
+    </div>
+
+    <div class="type-card">
+      <div class="item" style="border:none;padding-bottom:0;">
+        <div style="font-family:'Jost',sans-serif;font-weight:600;font-size:2rem;text-transform:uppercase;color:#131313;line-height:1.08;margin-bottom:.7rem;">COVA Coalition Events</div>
+        <div style="font-family:'Jost',sans-serif;font-weight:600;font-size:1.1rem;color:#3676B9;margin-bottom:.9rem;">Rise Up! Rally in Chesapeake</div>
+        <div style="font-family:'Inter',sans-serif;font-weight:400;font-size:14px;line-height:1.65;color:#131313cc;margin-bottom:.5rem;">Takes place every Saturday morning 9–10 am. Hosted by Rise Up Chesapeake, a COVA Coalition Partner. Intersection of Volvo Parkway and Battlefield Blvd — park in the Lowe's parking lot close to the intersection.</div>
+        <div style="font-family:'Inter',sans-serif;font-weight:500;font-size:12.5px;color:#131313;opacity:.7;">Saturday, 9–10 AM · Chesapeake, VA</div>
+      </div>
+    </div>
+
+    <div class="rotation-card">
+      <b>Roles —</b> Jost SemiBold for titles, subheads, and headline moments (works well tinted with any of the anchor or accent colors, as shown above in Mermaid Blue); Inter for everything else — body copy, captions, UI labels, meta text.
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-label">05 — Styling Notes</div>
+    <p class="section-note">Small conventions that hold the whole system together visually.</p>
+    <div class="type-card">
+      <div class="item"><strong>Corner radius</strong> — 4px throughout. Applies to the palette swatches, the color-coding tags, and every card element (type-card, rotation-card, tag-row, asset-note). One consistent value, no exceptions — it's what keeps bold color blocks and quiet reference cards feeling like the same system.</div>
+    </div>
+  </section>
+
+  <footer>COVA Coalition — Visual Direction Draft v3 — Internal Reference Only</footer>
+
+</div>
+</body>
+</html>
