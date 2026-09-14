@@ -15,7 +15,7 @@
   }
   .wrap{max-width:1040px;margin:0 auto;padding:0 1.5rem;}
 
-  header{padding:3.5rem 0 2.5rem;border-bottom:2px solid #131313;}
+  header{padding:3.5rem 0 5rem;}
 
   .moodboard-banner{
     border-radius:4px;overflow:hidden;margin-bottom:.6rem;
@@ -26,17 +26,34 @@
   }
   .banner-caption{
     font-family:'Inter',sans-serif;font-weight:600;font-size:10px;letter-spacing:.12em;
-    text-transform:uppercase;opacity:.4;margin-bottom:2rem;
+    text-transform:uppercase;opacity:.4;margin-bottom:7rem;
   }
   .eyebrow{font-weight:700;font-size:11px;letter-spacing:.16em;text-transform:uppercase;opacity:.55;margin-bottom:14px;}
-  h1{
-    font-family:'Jost',sans-serif;font-weight:600;
-    font-size:clamp(2.4rem,6.5vw,4rem);line-height:.98;letter-spacing:.3px;text-transform:uppercase;
+  h1{font-weight:normal;}
+  .wordmark-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:1.25rem;}
+  @media (max-width:640px){ .wordmark-grid{grid-template-columns:1fr;} }
+  .wordmark-card{
+    border-radius:4px;padding:2.4rem 1.6rem;min-height:180px;
+    display:flex;align-items:center;justify-content:flex-start;
   }
+  .wordmark-card.light{background:#fff;color:#131313;border:1px solid #13131322;}
+  .wordmark-card.dark{background:#131313;color:#FFFFFF;}
+  .wordmark-text{
+    font-family:'Jost',sans-serif;font-weight:600;
+    font-size:clamp(1.9rem,5.5vw,3.1rem);line-height:1.05;letter-spacing:.3px;
+    text-transform:uppercase;text-align:left;
+  }
+  .wordmark-text .accent{color:#C48FEE;}
   .dek{max-width:50%;font-size:15px;line-height:1.65;color:#131313cc;margin-top:1.25rem;}
   @media (max-width:720px){ .dek{max-width:100%;} }
 
-  .section{padding-top:3.5rem;}
+  .section{padding-top:0;}
+  .wave-divider{
+    height:12px;width:100%;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='12' viewBox='0 0 40 12'%3E%3Cpath d='M0,6 Q10,0 20,6 T40,6' fill='none' stroke='%233676B9' stroke-width='3'/%3E%3C/svg%3E");
+    background-repeat:repeat-x;background-position:left center;
+    margin:5rem 0;
+  }
   .section-label{font-weight:700;font-size:11px;letter-spacing:.16em;text-transform:uppercase;opacity:.55;margin-bottom:1rem;}
   .section-note{font-size:14px;line-height:1.65;color:#131313cc;max-width:50%;margin-bottom:2rem;}
   @media (max-width:720px){ .section-note{max-width:100%;} }
@@ -119,11 +136,37 @@
     text-transform:uppercase;opacity:.5;margin-bottom:.9rem;
   }
 
+  .pillar-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;}
+  @media (max-width:860px){ .pillar-grid{grid-template-columns:1fr 1fr;} }
+  @media (max-width:560px){ .pillar-grid{grid-template-columns:1fr;} }
+  .pillar-title{font-family:'Jost',sans-serif;font-weight:600;font-size:1.15rem;margin-bottom:.6rem;}
+  .pillar-desc{font-size:13px;line-height:1.6;color:#131313cc;margin-bottom:.8rem;}
+  .sub-note{font-size:12px;line-height:1.5;color:#131313aa;padding:6px 0 6px 12px;border-left:2px solid #13131322;margin-top:.5rem;}
+
+  .toc{margin-top:1.8rem;display:flex;flex-wrap:wrap;gap:.5rem 0;}
+  .toc-top{margin-top:2rem;margin-bottom:0;justify-content:center;}
+  .toc a{
+    font-family:'Inter',sans-serif;font-weight:600;font-size:11px;letter-spacing:.08em;
+    text-transform:uppercase;color:#131313;opacity:.6;text-decoration:none;padding:0 .8rem;border-right:1px solid #13131333;
+  }
+  .toc a:first-child{padding-left:0;}
+  .toc a:last-child{border-right:none;}
+  .toc a:hover{opacity:1;color:#3676B9;}
+
   footer{margin-top:4rem;padding-top:1.5rem;border-top:1px solid #13131322;font-size:11px;letter-spacing:.06em;opacity:.5;text-transform:uppercase;}
 </style>
 </head>
 <body>
 <div class="wrap">
+
+  <nav class="toc toc-top">
+    <a href="#palette">Palette</a>
+    <a href="#accessibility">Accessibility</a>
+    <a href="#typography">Typography</a>
+    <a href="#styling">Styling Notes</a>
+    <a href="#content-planning">Content Planning</a>
+    <a href="#color-coding">Color-Coding</a>
+  </nav>
 
   <header>
     <div class="moodboard-banner">
@@ -131,11 +174,21 @@
     </div>
     <div class="banner-caption">Some current digital assets in active use</div>
     <div class="eyebrow">Visual Direction · Draft v3 · Anchored &amp; Bold</div>
-    <h1>COVA Coalition</h1>
-    <p class="dek">Lavender Purple and Mermaid Blue stay exactly as they exist today · the two threads tying this system back to the logo and banner already in the world. Everything else leans into the bold, saturated, dynamic energy of the broader design system.</p>
+    <h1>
+      <div class="wordmark-grid">
+        <div class="wordmark-card light">
+          <div class="wordmark-text">CO<span class="accent">V</span>A<br>CO<span class="accent">A</span>LITION</div>
+        </div>
+        <div class="wordmark-card dark">
+          <div class="wordmark-text">CO<span class="accent">V</span>A<br>CO<span class="accent">A</span>LITION</div>
+        </div>
+      </div>
+    </h1>
+    <p class="dek">This isn't a rebrand · it's a practical toolkit built from what COVA already has out in the world. Lavender Purple and Mermaid Blue stay exactly as they are today, so nothing here should look unfamiliar next to your current logo, banner, or merchandise already in circulation. What it adds is consistency: colors, typography, and accessibility standards that let any graphic, whether built by a volunteer this week or a designer down the road, still feel like it came from the same coalition.</p>
   </header>
 
-  <section class="section">
+  <section class="section" id="palette">
+    <div class="wave-divider"></div>
     <div class="section-label">01 · The Palette</div>
     <p class="section-note">Two anchors, kept exactly as extracted from the existing logo and banner. Four bold new additions build out the energy · kept flat and simple, so the color itself does the work rather than any added effect.</p>
 
@@ -220,7 +273,8 @@
     </div>
   </section>
 
-  <section class="section">
+  <section class="section" id="accessibility">
+    <div class="wave-divider"></div>
     <div class="section-label">02 · Accessibility Standards</div>
     <p class="section-note">Every pairing checked against WCAG 2.1 · bold doesn't mean the accessibility discipline slips. For a brief explanation of these standards, see the <a href="https://www.w3.org/WAI/standards-guidelines/wcag/" style="color:#3676B9;">W3C Web Accessibility Initiative's WCAG overview</a>.</p>
 
@@ -239,7 +293,8 @@
     </div>
   </section>
 
-  <section class="section">
+  <section class="section" id="typography">
+    <div class="wave-divider"></div>
     <div class="section-label">03 · Typography</div>
     <p class="section-note">Font Ninja identified Poppins on the live site · but comparing letterforms directly against the actual logo (the sharp apex on the "A," the open aperture on the "C") pointed to Jost SemiBold as the closer visual match for headline use. Inter stays as confirmed · it's already doing quiet duty on nav and blog body text · and becomes the consistent body copy everywhere, replacing Arial.</p>
 
@@ -272,7 +327,8 @@
     </div>
   </section>
 
-  <section class="section">
+  <section class="section" id="styling">
+    <div class="wave-divider"></div>
     <div class="section-label">04 · Styling Notes</div>
     <p class="section-note">Small conventions that hold the whole system together visually.</p>
     <div class="type-card">
@@ -280,8 +336,51 @@
     </div>
   </section>
 
-  <section class="section">
-    <div class="section-label">05 · Color-Coding System</div>
+  <section class="section" id="content-planning">
+    <div class="wave-divider"></div>
+    <div class="section-label">05 · Content Planning Ideas</div>
+    <p class="section-note">Multi-Channel Social Campaign · Fall 2026. Six content pillars to riff off of in the run-up to November 3rd.</p>
+
+    <div class="pillar-grid">
+      <div class="type-card">
+        <div class="pillar-title">GOTV (Yes on 3) · November 3rd Amendments Graphics Package</div>
+        <p class="pillar-desc">A cohesive set of social graphics across Instagram, Facebook, Threads, and Bluesky promoting the "Vote Yes on 3 Amendments" message. Consistent look, easy to post across platforms.</p>
+        <div class="sub-note">➕ Early voting graphics · early voting dates vary by city across Coastal Virginia, so a set of localized "Early voting starts [date] in [city]!" graphics could be really high-impact and shareable.</div>
+        <div class="sub-note">❓ Open question · highlight individual candidates? (How many locations included?)</div>
+      </div>
+
+      <div class="type-card">
+        <div class="pillar-title">Fall Content &amp; Events Calendar</div>
+        <p class="pillar-desc">Map all upcoming events, actions, and key dates (early voting, Election Day, rallies, monthly meetings) into a social media posting schedule.</p>
+        <div class="sub-note">"Plan Your Action of the Week" · a weekly round-up of progressive events &amp; opportunities.</div>
+      </div>
+
+      <div class="type-card" style="border:2px solid #FFB627;">
+        <div class="pillar-title">Visual Identity Audit &amp; Quick Branding Guide</div>
+        <p class="pillar-desc">A look at whether the current social presence reads as visually consistent. If not, gently offering to help tighten it up could be a longer-term conversation beyond this initial engagement.</p>
+      </div>
+
+      <div class="type-card">
+        <div class="pillar-title">Shareable Graphics Hub</div>
+        <p class="pillar-desc">A folder of clean, original graphics that anyone (partner orgs, volunteers, supporters) can grab and use anywhere.</p>
+        <div class="sub-note">Worth checking · does something like this already exist for the current logo marks?</div>
+      </div>
+
+      <div class="type-card">
+        <div class="pillar-title">About / Meet the Coalition</div>
+        <p class="pillar-desc">Introduce COVA Coalition and link out to all of its partner organizations.</p>
+      </div>
+
+      <div class="type-card">
+        <div class="pillar-title">Election Day Countdown</div>
+        <p class="pillar-desc">A recurring countdown series (X days until Election Day) building visibility and urgency as November 3rd approaches.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="color-coding">
+    <div class="wave-divider"></div>
+    <div style="font-weight:700;font-size:11px;letter-spacing:.16em;text-transform:uppercase;margin-bottom:1rem;"><span style="opacity:.55;">06 · Color-Coding System:</span> <span style="color:#00D4C4;">FOR POTENTIAL FUTURE USE</span></div>
     <p class="section-note">Applied to the eight categories already in use on the events calendar. The two anchor colors carry COVA's own identity (its events, its top races); the new bold colors give the rest of the system genuine range and energy.</p>
 
     <div class="tag-grid">
